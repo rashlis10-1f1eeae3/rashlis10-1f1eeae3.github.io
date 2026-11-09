@@ -1,0 +1,1741 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>糖心vigo - 短剧与创意视频聚合</title>
+<meta name="description" content="糖心vigo 汇聚短剧、微综艺、创意短片等具体视频条目，提供最新更新、分类筛选、深度解析与用户评论，适合想快速发现优质视频内容的观众浏览。">
+<meta name="keywords" content="短剧合集,创意短片,微综艺,视频分类,内容解析">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23f43f5e'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif'%3E糖%3C/text%3E%3C/svg%3E">
+<style>
+:root {
+  --color-primary: #be123c;
+  --color-primary-light: #f43f5e;
+  --color-primary-bg: #fff1f2;
+  --color-accent: #d97706;
+  --color-text: #1e293b;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-bg: #f8fafc;
+  --color-panel: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-light: #f1f5f9;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --sticky-height: 96px;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-height); }
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font-family: inherit; cursor: pointer; }
+
+/* 吸顶公告条 */
+.announcement-bar {
+  background: var(--color-primary);
+  color: #fff;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.announcement-bar strong { font-weight: 700; }
+
+/* 吸顶页头 */
+.site-header {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 37px;
+  z-index: 99;
+}
+.header-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 60px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.brand-icon {
+  width: 34px;
+  height: 34px;
+  background: var(--color-primary);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1;
+}
+.brand-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+.header-nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.header-nav::-webkit-scrollbar { display: none; }
+.header-nav a {
+  padding: 6px 12px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.header-nav a:hover {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+}
+.header-search {
+  display: flex;
+  align-items: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+  padding: 4px 4px 4px 14px;
+  flex-shrink: 0;
+}
+.header-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  width: 150px;
+  color: var(--color-text);
+}
+.header-search button {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  padding: 5px 14px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* 首屏 */
+.hero {
+  background: linear-gradient(135deg, #fff1f2 0%, #fef2f2 40%, #fdf2f8 100%);
+  border-bottom: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 56px 24px 48px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.hero-content h1 {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--color-primary);
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.hero-desc {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  max-width: 560px;
+  margin-bottom: 28px;
+  line-height: 1.8;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 22px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-md); }
+.btn-primary { background: var(--color-primary); color: #fff; }
+.btn-outline { background: #fff; color: var(--color-primary); border: 1.5px solid var(--color-primary); }
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-visual svg { width: 100%; max-width: 360px; height: auto; }
+
+/* 三栏容器 */
+.page-container {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  display: grid;
+  grid-template-columns: 180px 1fr 260px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* 左侧频道索引 */
+.channel-sidebar {
+  position: sticky;
+  top: calc(var(--sticky-height) + 16px);
+}
+.channel-sidebar h2 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  padding-left: 4px;
+}
+.channel-list a {
+  display: block;
+  padding: 9px 14px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  margin-bottom: 2px;
+  border-left: 3px solid transparent;
+  transition: all 0.15s;
+}
+.channel-list a:hover, .channel-list a.active {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* 主内容区 */
+.main-content { min-width: 0; }
+
+/* 板块通用 */
+.section {
+  margin-bottom: 40px;
+}
+.section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  gap: 12px;
+}
+.section-header h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.3px;
+}
+.section-header .more-link {
+  font-size: 13px;
+  color: var(--color-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* 领域概览 */
+.overview-box {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  box-shadow: var(--shadow-sm);
+}
+.overview-box p {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+.overview-box p:last-child { margin-bottom: 0; }
+.overview-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.overview-tags span {
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* 精选卡片网格 */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.card {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.card-img {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--color-border-light);
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(190,18,60,0.9);
+  color: #fff;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+.card-body {
+  padding: 14px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+.card-desc {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 10px;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+.card-tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.card-tags span {
+  background: var(--color-border-light);
+  color: var(--color-text-secondary);
+  padding: 1px 7px;
+  border-radius: 8px;
+  font-size: 11px;
+}
+.card-hot {
+  color: var(--color-accent);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* 紧凑列表 */
+.compact-list {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.compact-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--color-border-light);
+  font-size: 14px;
+  transition: background 0.15s;
+}
+.compact-list li:last-child { border-bottom: none; }
+.compact-list li:hover { background: var(--color-bg); }
+.list-index {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-primary);
+  min-width: 24px;
+  text-align: center;
+  line-height: 1.6;
+  flex-shrink: 0;
+}
+.list-content { flex: 1; min-width: 0; }
+.list-title {
+  font-weight: 600;
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 2px;
+  line-height: 1.5;
+}
+.list-summary {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.list-time {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+/* 分类入口 */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+.category-item {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  text-align: center;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.category-item:hover {
+  border-color: var(--color-primary-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+.category-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--color-primary-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 2px;
+}
+.category-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.category-count {
+  font-size: 12px;
+  color: var(--color-text-muted);
+}
+
+/* 深度解析 */
+.deep-analysis {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 34px;
+  box-shadow: var(--shadow-sm);
+}
+.deep-analysis h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--color-primary-bg);
+}
+.deep-analysis h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-top: 26px;
+  margin-bottom: 10px;
+}
+.deep-analysis h3:first-of-type { margin-top: 0; }
+.deep-analysis p {
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+.deep-analysis ul {
+  margin: 10px 0 16px 0;
+  padding-left: 0;
+}
+.deep-analysis ul li {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 6px;
+}
+.deep-analysis ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 4px;
+  color: var(--color-primary-light);
+  font-size: 12px;
+  top: 2px;
+}
+
+/* 体验指南 */
+.guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.step-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.step-item:last-child { border-bottom: none; }
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  font-weight: 800;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.step-content h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+.step-content p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+}
+
+/* FAQ */
+.faq-list details {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+.faq-list details[open] {
+  border-color: var(--color-primary-light);
+}
+.faq-list summary {
+  padding: 16px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after {
+  content: "+";
+  font-size: 20px;
+  color: var(--color-primary);
+  font-weight: 400;
+  flex-shrink: 0;
+}
+.faq-list details[open] summary::after {
+  content: "−";
+}
+.faq-answer {
+  padding: 0 20px 18px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* 评论 */
+.comment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+.comment-item {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+}
+.comment-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.comment-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.comment-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.comment-date {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin-left: auto;
+}
+.comment-text {
+  font-size: 13.5px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+/* 相关资讯 */
+.news-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.news-item {
+  display: flex;
+  gap: 16px;
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  align-items: flex-start;
+  transition: box-shadow 0.2s;
+}
+.news-item:hover { box-shadow: var(--shadow-md); }
+.news-date {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  padding-top: 2px;
+  min-width: 78px;
+}
+.news-body { flex: 1; min-width: 0; }
+.news-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.news-summary {
+  font-size: 13px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* 相关推荐标签 */
+.recommend-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.recommend-tags a {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 8px 18px;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  transition: all 0.2s;
+}
+.recommend-tags a:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+/* 热门榜单 */
+.rank-list {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.rank-item:last-child { border-bottom: none; }
+.rank-num {
+  font-size: 16px;
+  font-weight: 900;
+  color: var(--color-text-muted);
+  width: 24px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.rank-item:nth-child(1) .rank-num { color: #dc2626; }
+.rank-item:nth-child(2) .rank-num { color: #ea580c; }
+.rank-item:nth-child(3) .rank-num { color: #ca8a04; }
+.rank-info { flex: 1; min-width: 0; }
+.rank-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+.rank-meta {
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin-top: 1px;
+}
+.rank-hot {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* 右侧辅助栏 */
+.aside-sidebar {
+  position: sticky;
+  top: calc(var(--sticky-height) + 16px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.aside-panel {
+  background: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+.aside-panel h3 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+.aside-rank li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--color-border-light);
+  font-size: 13px;
+}
+.aside-rank li:last-child { border-bottom: none; }
+.aside-rank-num {
+  font-weight: 800;
+  color: var(--color-primary-light);
+  font-size: 13px;
+  min-width: 18px;
+}
+.aside-rank-title {
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  flex: 1;
+}
+.aside-update li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 0;
+  font-size: 13px;
+  border-bottom: 1px dashed var(--color-border-light);
+}
+.aside-update li:last-child { border-bottom: none; }
+.aside-update .u-title { color: var(--color-text-secondary); line-height: 1.5; }
+.aside-update .u-time { color: var(--color-text-muted); font-size: 12px; white-space: nowrap; }
+
+/* 页尾 */
+.site-footer {
+  background: #1e293b;
+  color: #cbd5e1;
+  margin-top: 20px;
+}
+.footer-inner {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 44px 24px 28px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+.footer-brand h4 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 10px;
+}
+.footer-brand p {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.7;
+}
+.footer-col h5 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.footer-col a {
+  display: block;
+  font-size: 13px;
+  color: #94a3b8;
+  padding: 4px 0;
+  transition: color 0.15s;
+}
+.footer-col a:hover { color: #f43f5e; }
+.footer-bottom {
+  border-top: 1px solid #334155;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: #64748b;
+}
+.footer-note {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
+  .channel-sidebar {
+    position: static;
+    display: none;
+  }
+  .aside-sidebar {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+  .hero-content h1 { font-size: 34px; }
+  .hero-desc { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-visual { display: none; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .category-grid { grid-template-columns: repeat(4, 1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 740px) {
+  .header-inner { padding: 0 16px; gap: 12px; }
+  .brand-text { font-size: 17px; }
+  .header-search { display: none; }
+  .hero-inner { padding: 32px 16px 28px; }
+  .hero-content h1 { font-size: 28px; }
+  .hero-desc { font-size: 14px; }
+  .page-container { padding: 20px 16px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+  .comment-grid { grid-template-columns: 1fr; }
+  .aside-sidebar { grid-template-columns: 1fr; }
+  .news-item { flex-direction: column; gap: 6px; }
+  .news-date { min-width: auto; }
+  .overview-box { padding: 20px; }
+  .deep-analysis { padding: 22px 20px; }
+  .footer-top { grid-template-columns: 1fr; gap: 24px; }
+  .footer-inner { padding: 32px 16px 20px; }
+  .footer-bottom { flex-direction: column; }
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announcement-bar">
+  <strong>本周新增 12 部短剧</strong> · 《暗涌》第 3 集上线 · 微综艺《厨房暗战》定档 11 月 12 日
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-icon">糖</div>
+      <span class="brand-text">糖心vigo</span>
+    </div>
+    <nav class="header-nav" aria-label="主题导航">
+      <a href="/#duanju">短剧</a>
+      <a href="/#weizongyi">微综艺</a>
+      <a href="/#chuangyi">创意短片</a>
+      <a href="/#juqing">剧情向</a>
+      <a href="/#xiju">喜剧</a>
+      <a href="/#xuanyi">悬疑</a>
+      <a href="/#qinggan">情感</a>
+      <a href="/#dongzuo">动作</a>
+    </nav>
+    <form class="header-search" role="search" onsubmit="return localSearch(event)">
+      <input type="search" id="siteSearchInput" placeholder="搜索条目、类型…" aria-label="搜索本站内容">
+      <button type="submit">搜索</button>
+    </form>
+  </div>
+</header>
+
+<!-- 首屏 -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1>糖心vigo</h1>
+      <p class="hero-desc">汇聚短剧、微综艺与创意短片的具体条目，按悬疑、情感、喜剧、动作等类型分类，提供最新更新动态、深度内容解析与真实用户评论，帮助观众快速找到想看的视频内容。</p>
+      <div class="hero-actions">
+        <a href="/#jingxuan" class="btn btn-primary">浏览精选条目</a>
+        <a href="/#zuixin" class="btn btn-outline">查看最新更新</a>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <svg viewBox="0 0 360 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="30" width="320" height="200" rx="16" fill="#fff1f2" stroke="#fecdd3" stroke-width="2"/>
+        <rect x="40" y="50" width="120" height="75" rx="8" fill="#be123c" opacity="0.15"/>
+        <rect x="40" y="50" width="120" height="75" rx="8" stroke="#be123c" stroke-width="1.5"/>
+        <polygon points="85,75 85,105 110,90" fill="#be123c" opacity="0.6"/>
+        <rect x="175" y="50" width="145" height="10" rx="5" fill="#fecdd3"/>
+        <rect x="175" y="70" width="120" height="8" rx="4" fill="#fecdd3" opacity="0.7"/>
+        <rect x="175" y="88" width="135" height="8" rx="4" fill="#fecdd3" opacity="0.7"/>
+        <rect x="175" y="106" width="90" height="8" rx="4" fill="#fecdd3" opacity="0.5"/>
+        <rect x="40" y="140" width="280" height="1" fill="#fecdd3"/>
+        <rect x="40" y="155" width="85" height="55" rx="6" fill="#f43f5e" opacity="0.2"/>
+        <rect x="135" y="155" width="85" height="55" rx="6" fill="#f43f5e" opacity="0.3"/>
+        <rect x="230" y="155" width="85" height="55" rx="6" fill="#f43f5e" opacity="0.2"/>
+        <circle cx="82" cy="175" r="10" fill="#be123c" opacity="0.5"/>
+        <circle cx="177" cy="175" r="10" fill="#be123c" opacity="0.6"/>
+        <circle cx="272" cy="175" r="10" fill="#be123c" opacity="0.5"/>
+        <rect x="60" y="195" width="45" height="6" rx="3" fill="#fecdd3"/>
+        <rect x="155" y="195" width="45" height="6" rx="3" fill="#fecdd3"/>
+        <rect x="250" y="195" width="45" height="6" rx="3" fill="#fecdd3"/>
+        <circle cx="315" cy="45" r="18" fill="#f43f5e" opacity="0.12"/>
+        <circle cx="315" cy="45" r="8" fill="#f43f5e" opacity="0.3"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- 三栏主内容区 -->
+<div class="page-container">
+
+  <!-- 左侧频道索引 -->
+  <aside class="channel-sidebar" aria-label="频道索引">
+    <h2>频道索引</h2>
+    <nav class="channel-list">
+      <a href="/#duanju" class="active">短剧</a>
+      <a href="/#weizongyi">微综艺</a>
+      <a href="/#chuangyi">创意短片</a>
+      <a href="/#juqing">剧情向</a>
+      <a href="/#xiju">喜剧</a>
+      <a href="/#xuanyi">悬疑</a>
+      <a href="/#qinggan">情感</a>
+      <a href="/#dongzuo">动作</a>
+      <a href="/#qihuan">奇幻</a>
+      <a href="/#dushi">都市</a>
+    </nav>
+  </aside>
+
+  <!-- 主内容 -->
+  <main class="main-content">
+
+    <!-- 板块1：主题领域概览 -->
+    <section class="section" id="gaishu">
+      <div class="overview-box">
+        <p>糖心vigo 覆盖的短剧与创意视频领域，目前主要包含几个明确方向：一是强情节短剧，单集 3—8 分钟，以悬疑反转和情感冲突为核心驱动力，典型如《暗涌》《替身新娘》《第七次告白》；二是微综艺，单期 10—20 分钟，聚焦厨房竞技、旅行观察和素人互动，如《厨房暗战》《小城漫游》；三是创意短片，偏向作者表达与视觉实验，时长 5—15 分钟，如《逆光飞行》《纸箱里的宇宙》。</p>
+        <p>从近期更新节奏看，悬疑短剧保持每周 2—3 集的更新频率，情感类多为一次性放出全 8—12 集，微综艺以周更为主。观众在选择时通常关注三个维度：单集时长是否适合碎片时间、故事类型是否匹配当下情绪、制作水准是否达到可看门槛。创意短片则更依赖口碑传播，评分往往在播出后一周内趋于稳定。</p>
+        <div class="overview-tags">
+          <span>悬疑反转</span>
+          <span>情感冲突</span>
+          <span>厨房竞技</span>
+          <span>视觉实验</span>
+          <span>碎片时间</span>
+          <span>周更追剧</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 板块2：精选内容推荐 -->
+    <section class="section" id="jingxuan">
+      <div class="section-header">
+        <h2>精选内容推荐</h2>
+        <a href="/#jingxuan" class="more-link">查看全部 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/tangxin-anyong01/400/300" alt="暗涌短剧封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">悬疑</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">暗涌</h3>
+            <p class="card-desc">心理悬疑短剧，每集结尾设反转钩子，第 3 集揭露女主的双重身份。适合喜欢边看边推理的观众。</p>
+            <div class="card-meta">
+              <div class="card-tags"><span>反转</span><span>心理</span><span>周更</span></div>
+              <span class="card-hot">热度 9862</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/tangxin-tishen02/400/300" alt="替身新娘短剧封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">情感</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">替身新娘</h3>
+            <p class="card-desc">都市情感短剧，12 集一次性放出。聚焦契约婚姻中的身份错位，第 6 集身份揭露为全剧转折点。</p>
+            <div class="card-meta">
+              <div class="card-tags"><span>契约</span><span>身份错位</span><span>全集</span></div>
+              <span class="card-hot">热度 8740</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/tangxin-chufang03/400/300" alt="厨房暗战微综艺封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">微综艺</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">厨房暗战</h3>
+            <p class="card-desc">素人厨师限时对决微综艺，每期 18 分钟。第 4 期引入盲盒食材规则，反转频出，适合下饭观看。</p>
+            <div class="card-meta">
+              <div class="card-tags"><span>竞技</span><span>素人</span><span>周更</span></div>
+              <span class="card-hot">热度 7215</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/tangxin-niguang04/400/300" alt="逆光飞行创意短片封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">创意</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">逆光飞行</h3>
+            <p class="card-desc">12 分钟创意短片，讲述外卖骑手与无人机配送员之间的城市寓言。视觉风格偏暖色调，节奏克制。</p>
+            <div class="card-meta">
+              <div class="card-tags"><span>城市</span><span>寓言</span><span>视觉</span></div>
+              <span class="card-hot">评分 8.4</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/tangxin-diqici05/400/300" alt="第七次告白短剧封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">喜剧</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">第七次告白</h3>
+            <p class="card-desc">轻喜剧短剧，每集 5 分钟。男主每次告白都因意外失败，第 5 集开始引入时间循环设定，笑点密集。</p>
+            <div class="card-meta">
+              <div class="card-tags"><span>时间循环</span><span>轻松</span><span>日更</span></div>
+              <span class="card-hot">热度 8103</span>
+            </div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-img">
+            <img src="https://picsum.photos/seed/tangxin-xiaocheng06/400/300" alt="小城漫游微综艺封面" width="400" height="300" loading="lazy">
+            <span class="card-badge">旅行</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">小城漫游</h3>
+            <p class="card-desc">旅行观察微综艺，每期探访一座非热门小城。第 3 期走进安徽歙县，记录老茶馆与徽墨工坊的日常。</p>
+            <div class="card-meta">
+              <div class="card-tags"><span>旅行</span><span>人文</span><span>双周更</span></div>
+              <span class="card-hot">评分 8.1</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 板块3：最新更新与动态 -->
+    <section class="section" id="zuixin">
+      <div class="section-header">
+        <h2>最新更新与动态</h2>
+        <a href="/#zuixin" class="more-link">更多更新 →</a>
+      </div>
+      <ul class="compact-list">
+        <li>
+          <span class="list-index">01</span>
+          <div class="list-content">
+            <span class="list-title">暗涌 第 3 集上线</span>
+            <span class="list-summary">女主双重身份线索浮出水面，结尾彩蛋暗示第二季走向。</span>
+          </div>
+          <span class="list-time">今天 09:30</span>
+        </li>
+        <li>
+          <span class="list-index">02</span>
+          <div class="list-content">
+            <span class="list-title">厨房暗战 第 4 期盲盒食材对决</span>
+            <span class="list-summary">素人厨师随机抽取三种神秘食材，限时 25 分钟完成创意菜。</span>
+          </div>
+          <span class="list-time">昨天 21:10</span>
+        </li>
+        <li>
+          <span class="list-index">03</span>
+          <div class="list-content">
+            <span class="list-title">替身新娘 全 12 集一次性放出</span>
+            <span class="list-summary">契约婚姻题材，第 6 集身份揭露后剧情走向反转，适合一次性追完。</span>
+          </div>
+          <span class="list-time">11 月 6 日</span>
+        </li>
+        <li>
+          <span class="list-index">04</span>
+          <div class="list-content">
+            <span class="list-title">逆光飞行 导演解说版上线</span>
+            <span class="list-summary">新增 8 分钟幕后解析，讲述城市寓言短片的拍摄取景与色调设计。</span>
+          </div>
+          <span class="list-time">11 月 5 日</span>
+        </li>
+        <li>
+          <span class="list-index">05</span>
+          <div class="list-content">
+            <span class="list-title">第七次告白 第 5 集时间循环开启</span>
+            <span class="list-summary">男主陷入告白循环，每集重复同一天但细节变化，笑点密度提升。</span>
+          </div>
+          <span class="list-time">11 月 4 日</span>
+        </li>
+        <li>
+          <span class="list-index">06</span>
+          <div class="list-content">
+            <span class="list-title">小城漫游 第 3 期歙县篇上线</span>
+            <span class="list-summary">探访老茶馆、徽墨工坊与渔梁坝，记录小城日常节奏。</span>
+          </div>
+          <span class="list-time">11 月 2 日</span>
+        </li>
+        <li>
+          <span class="list-index">07</span>
+          <div class="list-content">
+            <span class="list-title">纸箱里的宇宙 入围短片展</span>
+            <span class="list-summary">9 分钟定格动画短片，讲述纸箱中微缩宇宙的诞生与消亡。</span>
+          </div>
+          <span class="list-time">11 月 1 日</span>
+        </li>
+        <li>
+          <span class="list-index">08</span>
+          <div class="list-content">
+            <span class="list-title">夜班便利店 全 6 集上线</span>
+            <span class="list-summary">都市情感短剧，每集一个深夜便利店顾客的故事，单集 6 分钟。</span>
+          </div>
+          <span class="list-time">10 月 30 日</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 板块4：分类入口 -->
+    <section class="section" id="fenlei">
+      <div class="section-header">
+        <h2>分类入口</h2>
+      </div>
+      <div class="category-grid">
+        <a href="/#xuanyi" class="category-item">
+          <div class="category-icon">🔍</div>
+          <span class="category-name">悬疑</span>
+          <span class="category-count">48 部</span>
+        </a>
+        <a href="/#qinggan" class="category-item">
+          <div class="category-icon">💔</div>
+          <span class="category-name">情感</span>
+          <span class="category-count">62 部</span>
+        </a>
+        <a href="/#xiju" class="category-item">
+          <div class="category-icon">😂</div>
+          <span class="category-name">喜剧</span>
+          <span class="category-count">35 部</span>
+        </a>
+        <a href="/#dongzuo" class="category-item">
+          <div class="category-icon">⚡</div>
+          <span class="category-name">动作</span>
+          <span class="category-count">27 部</span>
+        </a>
+        <a href="/#qihuan" class="category-item">
+          <div class="category-icon">✨</div>
+          <span class="category-name">奇幻</span>
+          <span class="category-count">19 部</span>
+        </a>
+        <a href="/#dushi" class="category-item">
+          <div class="category-icon">🏙️</div>
+          <span class="category-name">都市</span>
+          <span class="category-count">41 部</span>
+        </a>
+        <a href="/#weizongyi" class="category-item">
+          <div class="category-icon">🎤</div>
+          <span class="category-name">微综艺</span>
+          <span class="category-count">16 档</span>
+        </a>
+        <a href="/#chuangyi" class="category-item">
+          <div class="category-icon">🎬</div>
+          <span class="category-name">创意短片</span>
+          <span class="category-count">33 部</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 板块5：深度解析 -->
+    <section class="section" id="shendu">
+      <div class="deep-analysis">
+        <h2>深度解析：短剧与微综艺的观看选择逻辑</h2>
+        <p>在糖心vigo 汇聚的内容中，不同类型的视频在时长、更新节奏和观看场景上差异明显。理解这些差异，能帮助观众在有限时间里找到最匹配当下需求的内容。</p>
+
+        <h3>悬疑短剧的钩子设计与更新节奏</h3>
+        <p>悬疑类短剧通常采用“每集一钩子”的结构，单集 3—8 分钟，结尾设置信息缺口推动观众点开下一集。《暗涌》是典型代表：第 1 集建立女主日常身份，第 2 集引入目击者证词矛盾，第 3 集直接抛出双重身份的线索。这种节奏适合碎片时间观看，但也要求观众保持对前情的记忆。</p>
+        <p>更新频率方面，悬疑短剧多采用周更 2—3 集的模式，给观众留出讨论和推理的空间。一次性放出全集的悬疑剧较少，因为密集的信息量容易造成疲劳。观众在选择时可以先看前两集判断钩子是否成立，再决定是否追更。</p>
+
+        <h3>情感短剧的篇幅与情感浓度</h3>
+        <p>情感类短剧通常一次性放出 8—12 集，每集 5—8 分钟，总时长控制在 60—90 分钟。《替身新娘》12 集一次性放出，观众可以在一个晚上完成全部内容，情感曲线完整。这类作品的评判标准不同于悬疑剧：观众更关注角色关系的可信度、转折是否自然、结局是否提供情绪出口，而非单集钩子的强度。</p>
+        <ul>
+          <li>先看前 3 集判断人物关系是否成立，再决定是否投入完整时间；</li>
+          <li>关注第 6—8 集的关键转折点，这是情感剧的常见爆发位置；</li>
+          <li>结局质量直接影响整体评价，一次性放出的作品可以参考社区讨论再决定。</li>
+        </ul>
+
+        <h3>微综艺的观看场景与规则设计</h3>
+        <p>微综艺单期 10—20 分钟，适合下饭或通勤场景。《厨房暗战》每期 18 分钟，核心看点是素人厨师在限时和随机食材规则下的应变能力。第 4 期引入盲盒食材后，规则复杂度提升，节目节奏也随之加快。观众选择微综艺时，可以优先关注规则是否清晰、素人表现是否自然、剪辑是否拖沓三个维度。</p>
+        <p>《小城漫游》则属于慢节奏旅行观察，单期 15 分钟，信息密度较低但画面和人文细节丰富。这类内容适合对特定城市或生活方式感兴趣的观众，而非追求强刺激的观看需求。</p>
+
+        <h3>创意短片的评判维度</h3>
+        <p>创意短片时长 5—15 分钟，偏向作者表达。评判这类作品时，故事完整度、视觉风格统一性和情感落点比制作规模更重要。《逆光飞行》用 12 分钟讲述外卖骑手与无人机配送员的城市寓言，视觉风格统一，结尾留有余味，评分 8.4 反映了观众对其表达完整度的认可。《纸箱里的宇宙》则以定格动画形式呈现微缩宇宙，9 分钟完成从诞生到消亡的叙事闭环。</p>
+        <p>创意短片的评分通常在播出后一周内趋于稳定，观众可以参考评分和评论数量综合判断。如果评论集中在视觉或概念层面，说明作品在表达上有辨识度；如果评论集中在故事层面，则说明叙事是其主要竞争力。</p>
+      </div>
+    </section>
+
+    <!-- 板块6：体验指南 -->
+    <section class="section" id="zhinan">
+      <div class="section-header">
+        <h2>体验指南：按场景选择观看顺序</h2>
+      </div>
+      <div class="guide-steps">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>先确定可用时间</h4>
+            <p>15 分钟以内选单集短剧或创意短片；30—60 分钟选微综艺单期或情感短剧前几集；90 分钟以上可以一次性看完 12 集情感短剧。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>按情绪需求选类型</h4>
+            <p>想动脑推理选悬疑（暗涌、夜班便利店）；想放松笑一笑选喜剧（第七次告白）；想沉浸情感选都市情感（替身新娘）；想看看别人的生活选微综艺（厨房暗战、小城漫游）。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>用前两集判断是否继续</h4>
+            <p>悬疑短剧看第 1—2 集的钩子是否成立；情感短剧看前 3 集人物关系是否可信；微综艺看第 1 期规则是否清晰、节奏是否舒适。两集之内无法吸引你，可以果断换一部。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>参考评分与评论数量</h4>
+            <p>评分在 8.0 以上且评论数超过 200 条的创意短片通常有稳定的表达质量；悬疑短剧的评分波动较大，建议同时看评论中关于“结局是否圆回来”的讨论。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <h4>比较同类型条目</h4>
+            <p>同是悬疑短剧，暗涌偏心理博弈，夜班便利店偏都市奇谈，前者信息密度高，后者单集独立性强。根据你对连续叙事和单元故事的偏好来选择。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 板块7：FAQ -->
+    <section class="section" id="faq">
+      <div class="section-header">
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>悬疑短剧一般多久更新一次？</summary>
+          <div class="faq-answer">多数悬疑短剧采用周更模式，每周更新 2—3 集。像《暗涌》这样的心理悬疑剧每周二、周五各更新一集，全季 12—16 集，播出周期约 6—8 周。部分平台也会在完结后一次性放出全集，方便补看。</div>
+        </details>
+        <details>
+          <summary>《暗涌》和《夜班便利店》有什么区别？</summary>
+          <div class="faq-answer">《暗涌》是连续叙事型心理悬疑，单集之间情节紧密关联，需要按顺序观看；《夜班便利店》是单元剧结构，每集一个独立顾客故事，单集 6 分钟，可以跳集观看。前者适合追更讨论，后者适合碎片时间随机点开。</div>
+        </details>
+        <details>
+          <summary>第一次接触短剧，从哪个条目开始看比较好？</summary>
+          <div class="faq-answer">如果时间有限，建议从《第七次告白》开始，单集 5 分钟、轻喜剧节奏、时间循环设定容易理解。如果偏好情感题材，可以从《替身新娘》前 3 集试看，12 集总时长约 80 分钟，一个晚上可以完成。悬疑类入门可选《夜班便利店》，单元结构对连续观看要求较低。</div>
+        </details>
+        <details>
+          <summary>微综艺和传统综艺的主要区别是什么？</summary>
+          <div class="faq-answer">微综艺单期时长通常在 10—20 分钟，制作规模较小，场景和规则更聚焦。例如《厨房暗战》只围绕厨房竞技一个场景展开，《小城漫游》每期只探访一座小城。传统综艺单期 60—90 分钟，包含多个环节和嘉宾互动。微综艺适合通勤、下饭等碎片场景，节奏更快、信息更集中。</div>
+        </details>
+        <details>
+          <summary>创意短片的评分通常看哪些维度？</summary>
+          <div class="faq-answer">创意短片的评分主要参考故事完整度、视觉风格统一性和情感落点三个维度。故事完整度看是否在有限时长内完成叙事闭环；视觉风格统一性看色调、构图和剪辑是否协调；情感落点看结尾是否提供有效的情绪出口。例如《逆光飞行》在三个维度上都有稳定表现，评分 8.4。</div>
+        </details>
+        <details>
+          <summary>情感短剧为什么大多一次性放出全集？</summary>
+          <div class="faq-answer">情感短剧的观看驱动力是角色关系和情感曲线的完整性，一次性放出可以让观众在一个连续的时间段内完成情绪体验，避免周更打断代入感。同时，情感类作品的话题讨论集中在关键转折和结局，一次性放出有利于形成集中的讨论窗口。悬疑类则需要周更来维持推理和讨论节奏，两者在发行策略上有明显差异。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 板块8：用户评论 -->
+    <section class="section" id="pinglun">
+      <div class="section-header">
+        <h2>用户评论</h2>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">林</div>
+            <span class="comment-name">林小满</span>
+            <span class="comment-date">11-08</span>
+          </div>
+          <p class="comment-text">暗涌第 3 集那个彩蛋太关键了，直接把前面两集的细节全部串起来，回头看才发现第 1 集就有暗示。这种钩子设计很扎实。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">陈</div>
+            <span class="comment-name">陈默看剧</span>
+            <span class="comment-date">11-08</span>
+          </div>
+          <p class="comment-text">替身新娘一次性看完，第 6 集身份揭露确实没想到，但结局稍微有点仓促。整体还是值得一个晚上刷完的。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">王</div>
+            <span class="comment-name">王阿姨的厨房</span>
+            <span class="comment-date">11-07</span>
+          </div>
+          <p class="comment-text">厨房暗战第 4 期盲盒食材太好玩了，那个用三种根茎类食材做甜品的小哥确实有想法。就是剪辑有时候切太快，跟不上步骤。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">赵</div>
+            <span class="comment-name">赵可乐</span>
+            <span class="comment-date">11-07</span>
+          </div>
+          <p class="comment-text">第七次告白从第 5 集开始好看起来了，时间循环的设定让笑点有了叠加效果。前面四集稍微有点平，熬过去就好了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">周</div>
+            <span class="comment-name">周末漫游者</span>
+            <span class="comment-date">11-06</span>
+          </div>
+          <p class="comment-text">小城漫游歙县那期拍得真好，老茶馆那段几乎没怎么剪，就是让老板慢慢泡茶、慢慢聊天。现在很少有节目敢这么留白了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">吴</div>
+            <span class="comment-name">吴所谓</span>
+            <span class="comment-date">11-06</span>
+          </div>
+          <p class="comment-text">逆光飞行 12 分钟讲了一个完整的故事，结尾那个镜头停得恰到好处。8.4 分我觉得合理，视觉上确实有辨识度。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">郑</div>
+            <span class="comment-name">郑在追剧</span>
+            <span class="comment-date">11-05</span>
+          </div>
+          <p class="comment-text">夜班便利店每集 6 分钟，通勤路上正好看一集。第 4 集那个代驾司机的故事有点鼻酸，单元剧能做到这个程度挺难得的。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">孙</div>
+            <span class="comment-name">孙悟饭</span>
+            <span class="comment-date">11-05</span>
+          </div>
+          <p class="comment-text">纸箱里的宇宙定格动画做了多久啊？9 分钟看起来工作量巨大。概念很好，但中段稍微有点拖，压缩到 6 分钟可能更紧凑。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">李</div>
+            <span class="comment-name">李子树下</span>
+            <span class="comment-date">11-04</span>
+          </div>
+          <p class="comment-text">悬疑短剧我一般等完结再看，暗涌现在更到第 3 集，我准备攒到 8 集左右再开始。周更追悬疑太折磨了。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">黄</div>
+            <span class="comment-name">黄小厨</span>
+            <span class="comment-date">11-04</span>
+          </div>
+          <p class="comment-text">厨房暗战比很多大制作美食综艺好看，素人厨师有真本事，规则也简单直接。就是希望多给一点做菜过程的长镜头。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">刘</div>
+            <span class="comment-name">刘看山</span>
+            <span class="comment-date">11-03</span>
+          </div>
+          <p class="comment-text">创意短片这个分类做得不错，逆光飞行和纸箱里的宇宙风格完全不同，但都能看出作者表达。希望多推一些类似的。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">徐</div>
+            <span class="comment-name">徐徐图之</span>
+            <span class="comment-date">11-03</span>
+          </div>
+          <p class="comment-text">替身新娘的男主选角挺好的，那种隐忍的感觉演出来了。就是第 10 集那段对峙戏台词稍微有点多，节奏可以再紧一点。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">何</div>
+            <span class="comment-name">何同学</span>
+            <span class="comment-date">11-02</span>
+          </div>
+          <p class="comment-text">第七次告白的时间循环设定让我想起很多同类作品，但这部剧用轻喜剧方式处理，没有陷入沉重，这点比较聪明。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">马</div>
+            <span class="comment-name">马不停蹄</span>
+            <span class="comment-date">11-02</span>
+          </div>
+          <p class="comment-text">小城漫游的选城标准是什么？前两期的地方我都去过，拍得挺真实的，没有那种过度美化。希望下一期能去西南小城。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">高</div>
+            <span class="comment-name">高乐高</span>
+            <span class="comment-date">11-01</span>
+          </div>
+          <p class="comment-text">暗涌第 2 集那个目击者证词矛盾设置得有点刻意，不过第 3 集拉回来了。整体还是能追的，等下周更新。</p>
+        </div>
+        <div class="comment-item">
+          <div class="comment-head">
+            <div class="comment-avatar">罗</div>
+            <span class="comment-name">罗小罗</span>
+            <span class="comment-date">10-31</span>
+          </div>
+          <p class="comment-text">夜班便利店第 5 集那个考研学生的故事太真实了，深夜便利店确实能看到很多这样的人。短剧能在 6 分钟里讲好一个人物，不容易。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 板块9：相关资讯 -->
+    <section class="section" id="zixun">
+      <div class="section-header">
+        <h2>相关资讯</h2>
+      </div>
+      <div class="news-list">
+        <article class="news-item">
+          <span class="news-date">2026-11-07</span>
+          <div class="news-body">
+            <h3 class="news-title">暗涌第 3 集上线后讨论量单日破千</h3>
+            <p class="news-summary">双重身份线索引发社区推理潮，观众围绕第 1 集细节展开回溯分析，相关讨论帖超过 300 条。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <span class="news-date">2026-11-06</span>
+          <div class="news-body">
+            <h3 class="news-title">替身新娘全 12 集放出，情感短剧全集模式再引讨论</h3>
+            <p class="news-summary">一次性放出模式让观众在一个晚上完成情感体验，社区评价集中在第 6 集转折与结局节奏。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <span class="news-date">2026-11-05</span>
+          <div class="news-body">
+            <h3 class="news-title">厨房暗战第 4 期盲盒食材规则获好评</h3>
+            <p class="news-summary">随机食材限制提升了素人厨师的应变看点，观众反馈希望增加做菜过程的长镜头比例。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <span class="news-date">2026-11-04</span>
+          <div class="news-body">
+            <h3 class="news-title">逆光飞行导演解说版新增 8 分钟幕后内容</h3>
+            <p class="news-summary">解说版披露城市取景地与色调设计思路，为创意短片的制作过程提供参考。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <span class="news-date">2026-11-02</span>
+          <div class="news-body">
+            <h3 class="news-title">小城漫游歙县篇上线，慢节奏旅行观察受关注</h3>
+            <p class="news-summary">老茶馆与徽墨工坊段落获较多讨论，观众对非热门小城的选题方向表示认可。</p>
+          </div>
+        </article>
+        <article class="news-item">
+          <span class="news-date">2026-10-30</span>
+          <div class="news-body">
+            <h3 class="news-title">夜班便利店全 6 集上线，单元短剧再添新作</h3>
+            <p class="news-summary">每集 6 分钟的都市情感单元剧，深夜便利店场景串联六个独立顾客故事。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 板块10：相关推荐 -->
+    <section class="section" id="tuijian">
+      <div class="section-header">
+        <h2>相关推荐</h2>
+      </div>
+      <div class="recommend-tags">
+        <a href="/#xuanyi">心理悬疑短剧</a>
+        <a href="/#qinggan">契约婚姻题材</a>
+        <a href="/#weizongyi">素人厨艺竞技</a>
+        <a href="/#chuangyi">城市寓言短片</a>
+        <a href="/#xiju">时间循环喜剧</a>
+        <a href="/#dushi">深夜便利店故事</a>
+        <a href="/#chuangyi">定格动画短片</a>
+        <a href="/#weizongyi">小城旅行观察</a>
+      </div>
+    </section>
+
+    <!-- 板块11：热门榜单 -->
+    <section class="section" id="bangdan">
+      <div class="section-header">
+        <h2>本周热门榜单</h2>
+        <span class="more-link">11 月 2 日—11 月 8 日</span>
+      </div>
+      <div class="rank-list">
+        <div class="rank-item">
+          <span class="rank-num">1</span>
+          <div class="rank-info">
+            <div class="rank-title">暗涌</div>
+            <div class="rank-meta">悬疑 · 更新至第 3 集 · 周更</div>
+          </div>
+          <span class="rank-hot">9862</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">2</span>
+          <div class="rank-info">
+            <div class="rank-title">替身新娘</div>
+            <div class="rank-meta">情感 · 全 12 集 · 已完结</div>
+          </div>
+          <span class="rank-hot">8740</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">3</span>
+          <div class="rank-info">
+            <div class="rank-title">第七次告白</div>
+            <div class="rank-meta">喜剧 · 更新至第 5 集 · 日更</div>
+          </div>
+          <span class="rank-hot">8103</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">4</span>
+          <div class="rank-info">
+            <div class="rank-title">厨房暗战</div>
+            <div class="rank-meta">微综艺 · 更新至第 4 期 · 周更</div>
+          </div>
+          <span class="rank-hot">7215</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">5</span>
+          <div class="rank-info">
+            <div class="rank-title">夜班便利店</div>
+            <div class="rank-meta">都市 · 全 6 集 · 已完结</div>
+          </div>
+          <span class="rank-hot">6830</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">6</span>
+          <div class="rank-info">
+            <div class="rank-title">逆光飞行</div>
+            <div class="rank-meta">创意短片 · 12 分钟 · 导演解说版上线</div>
+          </div>
+          <span class="rank-hot">评分 8.4</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">7</span>
+          <div class="rank-info">
+            <div class="rank-title">小城漫游</div>
+            <div class="rank-meta">微综艺 · 更新至第 3 期 · 双周更</div>
+          </div>
+          <span class="rank-hot">评分 8.1</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">8</span>
+          <div class="rank-info">
+            <div class="rank-title">纸箱里的宇宙</div>
+            <div class="rank-meta">创意短片 · 9 分钟 · 定格动画</div>
+          </div>
+          <span class="rank-hot">评分 8.0</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 右侧辅助栏 -->
+  <aside class="aside-sidebar" aria-label="辅助信息">
+    <div class="aside-panel">
+      <h3>今日更新速览</h3>
+      <ul class="aside-update">
+        <li><span class="u-title">暗涌 第 3 集</span><span class="u-time">09:30</span></li>
+        <li><span class="u-title">第七次告白 第 5 集</span><span class="u-time">12:00</span></li>
+        <li><span class="u-title">逆光飞行 解说版</span><span class="u-time">14:00</span></li>
+        <li><span class="u-title">厨房暗战 第 4 期</span><span class="u-time">21:10</span></li>
+      </ul>
+    </div>
+    <div class="aside-panel">
+      <h3>类型热度参考</h3>
+      <ul class="aside-rank">
+        <li><span class="aside-rank-num">1</span><span class="aside-rank-title">悬疑短剧 · 周更追剧首选</span></li>
+        <li><span class="aside-rank-num">2</span><span class="aside-rank-title">都市情感 · 全集一次性观看</span></li>
+        <li><span class="aside-rank-num">3</span><span class="aside-rank-title">轻喜剧 · 碎片时间友好</span></li>
+        <li><span class="aside-rank-num">4</span><span class="aside-rank-title">微综艺 · 下饭场景稳定</span></li>
+        <li><span class="aside-rank-num">5</span><span class="aside-rank-title">创意短片 · 口碑驱动</span></li>
+      </ul>
+    </div>
+    <div class="aside-panel">
+      <h3>社区讨论焦点</h3>
+      <ul class="aside-rank">
+        <li><span class="aside-rank-num">·</span><span class="aside-rank-title">暗涌第 1 集有哪些隐藏细节？</span></li>
+        <li><span class="aside-rank-num">·</span><span class="aside-rank-title">替身新娘结局是否仓促？</span></li>
+        <li><span class="aside-rank-num">·</span><span class="aside-rank-title">厨房暗战第 4 期盲盒规则分析</span></li>
+        <li><span class="aside-rank-num">·</span><span class="aside-rank-title">小城漫游下一期想去哪座城</span></li>
+      </ul>
+    </div>
+  </aside>
+
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h4>糖心vigo</h4>
+        <p>汇聚短剧、微综艺与创意短片的具体条目，按类型分类并提供更新动态、深度解析与观众评论，服务于日常视频内容的选择与发现。</p>
+      </div>
+      <div class="footer-col">
+        <h5>内容类型</h5>
+        <a href="/#duanju">短剧</a>
+        <a href="/#weizongyi">微综艺</a>
+        <a href="/#chuangyi">创意短片</a>
+        <a href="/#dushi">都市题材</a>
+      </div>
+      <div class="footer-col">
+        <h5>热门分类</h5>
+        <a href="/#xuanyi">悬疑</a>
+        <a href="/#qinggan">情感</a>
+        <a href="/#xiju">喜剧</a>
+        <a href="/#qihuan">奇幻</a>
+      </div>
+      <div class="footer-col">
+        <h5>信息入口</h5>
+        <a href="/#zuixin">最新更新</a>
+        <a href="/#bangdan">热门榜单</a>
+        <a href="/#zixun">相关资讯</a>
+        <a href="/#faq">常见问题</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 糖心vigo · 内容聚合展示</span>
+      <span>部分内容为示例数据，仅用于展示页面结构</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function localSearch(e) {
+  e.preventDefault();
+  var input = document.getElementById('siteSearchInput');
+  var q = input.value.trim().toLowerCase();
+  if (!q) return false;
+  var targets = document.querySelectorAll('.card-title, .list-title, .category-name, .rank-title, .news-title, .comment-text');
+  var found = false;
+  targets.forEach(function(el) {
+    if (el.textContent.toLowerCase().indexOf(q) !== -1) {
+      found = true;
+      el.style.outline = '2px solid #be123c';
+      el.style.outlineOffset = '2px';
+      setTimeout(function() { el.style.outline = 'none'; }, 2500);
+    }
+  });
+  if (!found) {
+    alert('未找到与“' + input.value + '”相关的内容，请尝试其他关键词。');
+  }
+  return false;
+}
+</script>
+</body>
+  </html>
