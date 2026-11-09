@@ -1,0 +1,1496 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>555热播电视剧在线观看 - 剧集聚合与追剧指南</title>
+<meta name="description" content="555热播电视剧在线观看聚合热播剧集与追剧指南，涵盖都市情感、古装传奇、悬疑刑侦、青春校园、年代剧等多类型条目，提供更新动态、深度解析与分类入口，适合剧迷筛选与追看。">
+<meta name="keywords" content="热播剧集聚合,追剧指南,电视剧分类,更新动态,剧集解析">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23c0392b'/%3E%3Cpath d='M40 30 L70 50 L40 70 Z' fill='white'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f7f5f2;
+    --panel: #ffffff;
+    --ink: #1e1e1e;
+    --ink-soft: #4a4a4a;
+    --muted: #7a7a7a;
+    --line: #e0ddd8;
+    --brand: #b03a2e;
+    --brand-soft: #f4e6e3;
+    --accent: #d4a017;
+    --accent-soft: #fdf3d8;
+    --radius-s: 6px;
+    --radius-m: 10px;
+    --radius-l: 16px;
+    --shadow: 0 2px 10px rgba(0,0,0,0.04);
+    --shadow-hover: 0 6px 20px rgba(0,0,0,0.08);
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    --sticky-offset: 104px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+  button { font-family: inherit; cursor: pointer; }
+  ul, ol { list-style: none; }
+
+  /* 吸顶公告条 */
+  .announce {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: var(--brand);
+    color: #fff;
+    font-size: 13px;
+    padding: 7px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .announce strong { font-weight: 600; }
+  .announce .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  /* 吸顶页头 */
+  .site-header {
+    position: sticky;
+    top: 36px;
+    z-index: 55;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 1px 6px rgba(0,0,0,0.03);
+  }
+  .header-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .brand svg { width: 36px; height: 36px; }
+  .brand-text {
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--brand);
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+  .main-nav {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .main-nav a {
+    font-size: 14px;
+    padding: 6px 11px;
+    border-radius: 20px;
+    color: var(--ink-soft);
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+  }
+  .main-nav a:hover,
+  .main-nav a:focus-visible {
+    background: var(--brand-soft);
+    color: var(--brand);
+    outline: none;
+  }
+  .main-nav a:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; }
+
+  /* 主容器 - 双栏标准 */
+  .container {
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 28px 24px 40px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 32px;
+    align-items: start;
+  }
+  .main-col { min-width: 0; }
+  .side-col { min-width: 0; position: sticky; top: calc(var(--sticky-offset) + 16px); }
+
+  /* 首屏 */
+  .hero {
+    background: var(--panel);
+    border-radius: var(--radius-l);
+    padding: 32px 32px 28px;
+    margin-bottom: 32px;
+    box-shadow: var(--shadow);
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 28px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 260px; height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--brand-soft) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero h1 {
+    font-size: 30px;
+    line-height: 1.3;
+    color: var(--brand);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-intro {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+    max-width: 560px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-intro strong { color: var(--brand); font-weight: 600; }
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-tags span {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    background: var(--accent-soft);
+    color: #8a6d1a;
+    font-weight: 500;
+  }
+  .hero-visual {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-visual svg { width: 100%; max-width: 240px; height: auto; }
+
+  /* 板块通用 */
+  .section {
+    margin-bottom: 32px;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .section-head h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--ink);
+    position: relative;
+    padding-left: 12px;
+    line-height: 1.4;
+  }
+  .section-head h2::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 6px; bottom: 6px;
+    width: 4px;
+    border-radius: 2px;
+    background: var(--brand);
+  }
+  .section-head .more {
+    font-size: 13px;
+    color: var(--muted);
+    transition: color 0.2s;
+  }
+  .section-head .more:hover { color: var(--brand); }
+
+  /* 精选卡片网格 */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 18px;
+  }
+  .drama-card {
+    background: var(--panel);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .drama-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+  }
+  .drama-card .cover {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: var(--brand-soft);
+  }
+  .drama-card .cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  .drama-card:hover .cover img { transform: scale(1.04); }
+  .drama-card .type-badge {
+    position: absolute;
+    top: 10px; left: 10px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 9px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  .drama-card .card-body {
+    padding: 12px 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    flex: 1;
+  }
+  .drama-card .card-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .drama-card .card-desc {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .drama-card .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11.5px;
+    color: var(--muted);
+    flex-wrap: wrap;
+  }
+  .drama-card .card-meta .hot {
+    color: var(--brand);
+    font-weight: 600;
+  }
+  .drama-card .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 2px;
+  }
+  .drama-card .card-tags span {
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--ink-soft);
+  }
+
+  /* 最新更新列表 */
+  .update-list {
+    background: var(--panel);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .update-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s;
+  }
+  .update-item:last-child { border-bottom: none; }
+  .update-item:hover { background: #faf9f7; }
+  .update-item .time {
+    font-size: 12px;
+    color: var(--muted);
+    flex-shrink: 0;
+    width: 62px;
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .update-item .content { flex: 1; min-width: 0; }
+  .update-item .content strong {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 2px;
+  }
+  .update-item .content p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* 分类入口 */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .category-item {
+    background: var(--panel);
+    border-radius: var(--radius-m);
+    padding: 16px 12px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .category-item:hover {
+    background: var(--brand-soft);
+    transform: translateY(-2px);
+  }
+  .category-item .cat-icon {
+    font-size: 22px;
+    line-height: 1;
+    color: var(--brand);
+  }
+  .category-item .cat-name {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .category-item .cat-count {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* 深度解析 */
+  .deep-dive {
+    background: var(--panel);
+    border-radius: var(--radius-m);
+    padding: 28px 30px;
+    box-shadow: var(--shadow);
+  }
+  .deep-dive h3 {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--brand);
+    margin: 22px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px dashed var(--line);
+  }
+  .deep-dive h3:first-child { margin-top: 0; }
+  .deep-dive p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.85;
+    margin-bottom: 10px;
+  }
+  .deep-dive ul {
+    margin: 8px 0 14px 18px;
+    list-style: disc;
+  }
+  .deep-dive ul li {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.75;
+    margin-bottom: 4px;
+  }
+  .deep-dive ul li strong { color: var(--ink); }
+
+  /* 体验指南 */
+  .guide-steps {
+    background: var(--panel);
+    border-radius: var(--radius-m);
+    padding: 24px 26px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .step-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .step-num {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--brand);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .step-body h4 {
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .step-body p {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* FAQ */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .faq-item {
+    background: var(--panel);
+    border-radius: var(--radius-s);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .faq-item summary {
+    padding: 14px 18px;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--ink);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.15s;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 18px;
+    color: var(--brand);
+    font-weight: 400;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+  }
+  .faq-item[open] summary::after { content: '−'; }
+  .faq-item summary:hover { background: #faf9f7; }
+  .faq-item summary:focus-visible { outline: 2px solid var(--brand); outline-offset: -2px; }
+  .faq-item .faq-answer {
+    padding: 0 18px 14px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.8;
+  }
+
+  /* 用户评论 */
+  .comment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 12px;
+  }
+  .comment-card {
+    background: var(--panel);
+    border-radius: var(--radius-s);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .comment-card .comment-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .comment-card .avatar {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .comment-card .nickname {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .comment-card .comment-text {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .comment-card .comment-tag {
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg);
+    padding: 1px 8px;
+    border-radius: 4px;
+    align-self: flex-start;
+  }
+
+  /* 相关资讯 */
+  .news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .news-item {
+    background: var(--panel);
+    border-radius: var(--radius-s);
+    padding: 14px 18px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .news-item .news-date {
+    font-size: 12px;
+    color: var(--muted);
+    flex-shrink: 0;
+    width: 74px;
+    font-variant-numeric: tabular-nums;
+    padding-top: 1px;
+  }
+  .news-item .news-body h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 3px;
+    line-height: 1.45;
+  }
+  .news-item .news-body p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* 相关推荐标签索引 */
+  .tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .tag-cloud a {
+    font-size: 13px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--panel);
+    color: var(--ink-soft);
+    box-shadow: var(--shadow);
+    transition: background 0.2s, color 0.2s;
+  }
+  .tag-cloud a:hover {
+    background: var(--brand);
+    color: #fff;
+  }
+
+  /* 补充板块 - 热门榜单 */
+  .rank-list {
+    background: var(--panel);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .rank-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 18px;
+    border-bottom: 1px solid var(--line);
+    transition: background 0.15s;
+  }
+  .rank-item:last-child { border-bottom: none; }
+  .rank-item:hover { background: #faf9f7; }
+  .rank-num {
+    width: 24px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--muted);
+    flex-shrink: 0;
+    text-align: center;
+  }
+  .rank-item:nth-child(1) .rank-num { color: var(--brand); }
+  .rank-item:nth-child(2) .rank-num { color: var(--brand); }
+  .rank-item:nth-child(3) .rank-num { color: var(--brand); }
+  .rank-item .rank-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+    flex: 1;
+  }
+  .rank-item .rank-score {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .rank-item .rank-type {
+    font-size: 11px;
+    color: var(--muted);
+    background: var(--bg);
+    padding: 1px 7px;
+    border-radius: 4px;
+  }
+
+  /* 侧栏 */
+  .side-panel {
+    background: var(--panel);
+    border-radius: var(--radius-m);
+    box-shadow: var(--shadow);
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .side-panel h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+  }
+  .side-panel .side-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+  .side-panel .side-list a {
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    transition: color 0.2s;
+  }
+  .side-panel .side-list a:hover { color: var(--brand); }
+  .side-panel .side-list a span:last-child {
+    color: var(--muted);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  .side-panel .side-note {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  /* 页尾 */
+  .site-footer {
+    background: #1e1e1e;
+    color: #b0b0b0;
+    padding: 40px 24px 24px;
+    margin-top: 20px;
+  }
+  .footer-inner {
+    max-width: 1360px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 32px;
+  }
+  .footer-col h4 {
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .footer-col p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #999;
+  }
+  .footer-col a {
+    font-size: 13px;
+    color: #999;
+    display: block;
+    margin-bottom: 6px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    max-width: 1360px;
+    margin: 28px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid #333;
+    font-size: 12px;
+    color: #777;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* 响应式 */
+  @media (max-width: 1024px) {
+    .container {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    .side-col {
+      position: static;
+    }
+    .hero {
+      grid-template-columns: 1fr;
+      text-align: left;
+    }
+    .hero-visual { display: none; }
+    .footer-inner {
+      grid-template-columns: 1fr 1fr;
+    }
+    .category-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  @media (max-width: 740px) {
+    .header-inner {
+      padding: 8px 16px;
+      gap: 10px;
+    }
+    .brand-text { font-size: 16px; }
+    .main-nav {
+      justify-content: flex-start;
+      gap: 2px;
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .main-nav a { font-size: 12.5px; padding: 5px 9px; }
+    .container { padding: 18px 14px 30px; }
+    .hero { padding: 22px 20px; }
+    .hero h1 { font-size: 24px; }
+    .card-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .category-grid { grid-template-columns: repeat(2, 1fr); }
+    .comment-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+    .update-item { padding: 11px 14px; }
+    .update-item .time { width: 50px; font-size: 11px; }
+    .deep-dive { padding: 20px 18px; }
+    .guide-steps { padding: 18px; }
+    .section-head h2 { font-size: 18px; }
+    .news-item { flex-direction: column; gap: 4px; }
+    .news-item .news-date { width: auto; }
+  }
+  @media (max-width: 400px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .category-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 -->
+<div class="announce">
+  <span class="dot"></span>
+  <strong>本周新增 12 部热播剧集</strong>
+  <span>《暗夜回声》第 8 集已上线 · 《长街灯火》今晚 21:00 更新</span>
+</div>
+
+<!-- 吸顶页头 -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="/#hero" class="brand" aria-label="555热播电视剧在线观看首页">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <circle cx="50" cy="50" r="46" fill="#b03a2e"/>
+        <path d="M38 28 L74 50 L38 72 Z" fill="#fff"/>
+      </svg>
+      <span class="brand-text">555热播电视剧在线观看</span>
+    </a>
+    <nav class="main-nav" aria-label="主题导航">
+      <a href="/#featured">精选剧集</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">追剧指南</a>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#rank">热门榜单</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 主内容区：双栏标准 -->
+<div class="container">
+  <main class="main-col">
+
+    <!-- 首屏 -->
+    <section class="hero" id="hero">
+      <div>
+        <h1>555热播电视剧在线观看</h1>
+        <p class="hero-intro">
+          聚合当前热播剧集与追剧入口，覆盖<strong>都市情感、古装传奇、悬疑刑侦、青春校园、年代生活</strong>等类型。这里按更新节奏与口碑维度整理具体条目，提供每部剧的类型标签、看点摘要与热度参考，帮助你在换剧间隙快速判断下一部追什么。
+        </p>
+        <div class="hero-tags">
+          <span>都市情感</span>
+          <span>古装传奇</span>
+          <span>悬疑刑侦</span>
+          <span>青春校园</span>
+          <span>年代生活</span>
+          <span>奇幻冒险</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 240 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="30" width="200" height="140" rx="12" fill="#f4e6e3"/>
+          <rect x="34" y="44" width="172" height="112" rx="6" fill="#fff"/>
+          <rect x="34" y="44" width="172" height="28" rx="6" fill="#b03a2e"/>
+          <circle cx="48" cy="58" r="4" fill="#fff" opacity="0.6"/>
+          <circle cx="62" cy="58" r="4" fill="#fff" opacity="0.6"/>
+          <circle cx="76" cy="58" r="4" fill="#fff" opacity="0.6"/>
+          <rect x="48" y="84" width="60" height="8" rx="4" fill="#e0ddd8"/>
+          <rect x="48" y="100" width="90" height="6" rx="3" fill="#f0ede8"/>
+          <rect x="48" y="114" width="70" height="6" rx="3" fill="#f0ede8"/>
+          <rect x="48" y="128" width="50" height="6" rx="3" fill="#f0ede8"/>
+          <rect x="148" y="84" width="44" height="56" rx="6" fill="#fdf3d8"/>
+          <path d="M160 100 L180 112 L160 124 Z" fill="#d4a017"/>
+          <rect x="34" y="156" width="172" height="0" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- 主题领域概览 -->
+    <section class="section" id="overview">
+      <div class="section-head">
+        <h2>热播剧集领域概览</h2>
+      </div>
+      <div class="deep-dive" style="padding:22px 26px;">
+        <p>当前剧集市场按题材大致可分为都市情感、古装传奇、悬疑刑侦、青春校园、年代生活、奇幻冒险六大方向。都市情感类以职场与家庭关系为轴心，节奏偏快，适合碎片时间观看；古装传奇侧重世界观与人物群像，单集信息量大，适合连续追看；悬疑刑侦通常采用单元案件与主线交织的结构，对逻辑连贯性要求较高；青春校园以成长与情感为主线，集数偏短；年代生活剧注重细节还原与代际关系，适合喜欢慢节奏叙事的观众；奇幻冒险则依赖特效与设定展开，世界观构建是核心看点。</p>
+        <p>从更新节奏看，多数热播剧保持每周更新 4—6 集，部分平台采用首周连更、后续周更的策略。评判一部剧是否值得投入时间，可以先看类型标签与主创阵容是否匹配个人偏好，再参考前三集的节奏密度与豆瓣短评中的具体讨论点。当前热播条目中，《暗夜回声》以刑侦单元剧形式推进，《长街灯火》聚焦年代家庭变迁，《南风知我意》主打都市治愈，《少年游侠录》偏向古装群像冒险，各有明确的受众定位。</p>
+      </div>
+    </section>
+
+    <!-- 精选内容推荐 -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>精选热播剧集推荐</h2>
+        <a href="/#rank" class="more">查看热度榜单 →</a>
+      </div>
+      <div class="card-grid">
+        <article class="drama-card">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/anyehuisheng47/400/300" alt="暗夜回声刑侦剧集封面" width="400" height="300" loading="lazy">
+            <span class="type-badge">悬疑刑侦</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">暗夜回声</h3>
+            <p class="card-desc">以连环失踪案切入，双线叙事交替推进。第 8 集揭开旧案关联，节奏紧凑，适合喜欢单元案件与主线交织的观众。</p>
+            <div class="card-meta">
+              <span class="hot">热度 9.2</span>
+              <span>更新至 8 集</span>
+            </div>
+            <div class="card-tags">
+              <span>双线叙事</span>
+              <span>连环案件</span>
+              <span>警匪</span>
+            </div>
+          </div>
+        </article>
+        <article class="drama-card">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/changjiedh08/400/300" alt="长街灯火年代剧集封面" width="400" height="300" loading="lazy">
+            <span class="type-badge">年代生活</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">长街灯火</h3>
+            <p class="card-desc">以南方小城一条老街为背景，讲述三代人的生计与选择。场景还原细致，适合偏好慢节奏家庭叙事的观众。</p>
+            <div class="card-meta">
+              <span class="hot">热度 8.8</span>
+              <span>今晚 21:00 更新</span>
+            </div>
+            <div class="card-tags">
+              <span>家庭群像</span>
+              <span>年代变迁</span>
+              <span>小城故事</span>
+            </div>
+          </div>
+        </article>
+        <article class="drama-card">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/nanfengzy03/400/300" alt="南风知我意都市情感剧封面" width="400" height="300" loading="lazy">
+            <span class="type-badge">都市情感</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">南风知我意</h3>
+            <p class="card-desc">聚焦设计师行业与合租关系，用轻喜方式处理职场压力。台词生活化，适合下班后放松观看。</p>
+            <div class="card-meta">
+              <span class="hot">热度 8.5</span>
+              <span>更新至 14 集</span>
+            </div>
+            <div class="card-tags">
+              <span>职场治愈</span>
+              <span>合租日常</span>
+              <span>轻喜剧</span>
+            </div>
+          </div>
+        </article>
+        <article class="drama-card">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/shaonianyx12/400/300" alt="少年游侠录古装剧封面" width="400" height="300" loading="lazy">
+            <span class="type-badge">古装传奇</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">少年游侠录</h3>
+            <p class="card-desc">江湖门派与朝堂暗线并行，主角团在护送任务中逐步揭开身世。武打设计偏写实，群像塑造有辨识度。</p>
+            <div class="card-meta">
+              <span class="hot">热度 8.9</span>
+              <span>更新至 22 集</span>
+            </div>
+            <div class="card-tags">
+              <span>江湖群像</span>
+              <span>写实武打</span>
+              <span>身世谜团</span>
+            </div>
+          </div>
+        </article>
+        <article class="drama-card">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/qingchunbkl19/400/300" alt="青春不快乐青春校园剧封面" width="400" height="300" loading="lazy">
+            <span class="type-badge">青春校园</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">青春不快乐</h3>
+            <p class="card-desc">以复读班为场景，聚焦考试压力与友情关系。没有强冲突，靠细节和对话撑起真实感，集数较短适合一口气看完。</p>
+            <div class="card-meta">
+              <span class="hot">热度 8.1</span>
+              <span>全 16 集已上线</span>
+            </div>
+            <div class="card-tags">
+              <span>复读班</span>
+              <span>成长群像</span>
+              <span>短剧</span>
+            </div>
+          </div>
+        </article>
+        <article class="drama-card">
+          <div class="cover">
+            <img src="https://picsum.photos/seed/xinghelv55/400/300" alt="星河旅人奇幻冒险剧封面" width="400" height="300" loading="lazy">
+            <span class="type-badge">奇幻冒险</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">星河旅人</h3>
+            <p class="card-desc">太空歌剧框架下的寻亲故事，每集一个星球场景。视觉体系完整，适合喜欢世界观构建的观众。</p>
+            <div class="card-meta">
+              <span class="hot">热度 8.4</span>
+              <span>更新至 10 集</span>
+            </div>
+            <div class="card-tags">
+              <span>太空歌剧</span>
+              <span>星球冒险</span>
+              <span>寻亲主线</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 最新更新 / 热播动态 -->
+    <section class="section" id="updates">
+      <div class="section-head">
+        <h2>最新更新与热播动态</h2>
+        <span class="more">2026-11-08 更新</span>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="time">今天 09:30</span>
+          <div class="content"><strong>暗夜回声 第 8 集</strong><p>旧案卷宗出现新线索，主角团队调整调查方向。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">今天 08:15</span>
+          <div class="content"><strong>长街灯火 今晚 21:00 更新</strong><p>第 15 集聚焦老街拆迁风波，家庭会议戏份集中。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">昨天 21:10</span>
+          <div class="content"><strong>南风知我意 第 14 集上线</strong><p>合租室友关系出现转折，设计师项目进入关键阶段。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">昨天 18:40</span>
+          <div class="content"><strong>少年游侠录 第 22 集</strong><p>护送任务抵达边城，主线身世线索进一步收束。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">11 月 6 日</span>
+          <div class="content"><strong>青春不快乐 全 16 集上线</strong><p>复读班故事完结，最后三集集中处理志愿填报分歧。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">11 月 5 日</span>
+          <div class="content"><strong>星河旅人 第 10 集</strong><p>抵达第三颗星球，寻亲线索指向新的坐标。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">11 月 4 日</span>
+          <div class="content"><strong>雾港谜案 定档 11 月 12 日</strong><p>刑侦题材新剧，首周连更 6 集，故事背景设在港口城市。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">11 月 3 日</span>
+          <div class="content"><strong>春山如笑 首支预告发布</strong><p>古装轻喜题材，预计 12 月上线，主打宅院日常与群像互动。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">11 月 2 日</span>
+          <div class="content"><strong>暗夜回声 第 7 集</strong><p>单元案件收束，主线关联人物正式登场。</p></div>
+        </div>
+        <div class="update-item">
+          <span class="time">11 月 1 日</span>
+          <div class="content"><strong>南风知我意 第 12 集</strong><p>项目竞标结果公布，合租日常线出现新角色。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-head">
+        <h2>按类型浏览剧集</h2>
+      </div>
+      <div class="category-grid">
+        <a href="/#featured" class="category-item">
+          <span class="cat-icon">🏙️</span>
+          <span class="cat-name">都市情感</span>
+          <span class="cat-count">42 部在列</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-icon">🏯</span>
+          <span class="cat-name">古装传奇</span>
+          <span class="cat-count">38 部在列</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-icon">🔍</span>
+          <span class="cat-name">悬疑刑侦</span>
+          <span class="cat-count">27 部在列</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-icon">🎒</span>
+          <span class="cat-name">青春校园</span>
+          <span class="cat-count">19 部在列</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-icon">📻</span>
+          <span class="cat-name">年代生活</span>
+          <span class="cat-count">24 部在列</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-icon">🌌</span>
+          <span class="cat-name">奇幻冒险</span>
+          <span class="cat-count">16 部在列</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-icon">⚖️</span>
+          <span class="cat-name">律政职场</span>
+          <span class="cat-count">13 部在列</span>
+        </a>
+        <a href="/#featured" class="category-item">
+          <span class="cat-icon">🏥</span>
+          <span class="cat-name">医疗行业</span>
+          <span class="cat-count">11 部在列</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="section" id="deep-dive">
+      <div class="section-head">
+        <h2>热播剧集类型深度解析</h2>
+      </div>
+      <div class="deep-dive">
+        <h3>悬疑刑侦剧的叙事结构差异</h3>
+        <p>悬疑刑侦类剧集常见两种结构：一是单元案件剧，每 1—2 集解决一个独立案件，主线仅作为背景缓慢推进；二是连续叙事剧，全剧围绕一个大案展开，每集结尾设置钩子。前者的优势在于随时可以进入，适合碎片化观看；后者需要连续追看，中断后容易丢失线索。以《暗夜回声》为例，它采用单元案件加主线暗线的混合模式，前六集以失踪案为单元，第七集开始主线关联人物浮现，观众如果从中间切入，建议先补看第六集结尾的线索汇总段落。</p>
+        <h3>古装传奇的群像与单线选择</h3>
+        <p>古装传奇在人物结构上分为群像剧与单主角剧。群像剧通常有三到五条并行的成长线，每集在不同角色之间切换，信息密度高但节奏偏慢；单主角剧围绕一个人的目标推进，爽感集中，适合追求强情节的观众。判断一部古装剧的群像质量，可以看配角是否有独立的行动动机，而不是只为主角服务。《少年游侠录》在护送任务中为每个同行角色设置了单独的抉择节点，属于群像完成度较高的样本。</p>
+        <h3>都市情感剧的节奏判断</h3>
+        <p>都市情感剧的节奏差异主要体现在冲突密度上。轻喜治愈类每集设置一到两个小冲突，用对话和场景细节化解；强冲突类则依赖误会、竞争、家庭矛盾推动剧情，情绪起伏更大。选择时可以先看前两集的冲突类型是否在个人接受范围内。此外，职业线是否扎实也是重要参考——行业细节如果只作为背景板存在，剧集重心就会完全落在情感线上，适合偏好纯情感叙事的观众；如果职业线与情感线各占一半，则需要更多耐心跟进项目进展。</p>
+        <h3>年代生活剧的细节门槛</h3>
+        <p>年代剧的观看门槛在于对时代背景的熟悉程度。道具、服装、语言习惯如果还原到位，观众容易进入情境；如果细节失真，会持续产生出戏感。挑选年代剧时，可以留意场景搭建是实景还是棚拍，以及方言使用是否统一。《长街灯火》以南方小城为背景，在街景布置和家庭陈设上投入较多，适合对年代氛围有要求的观众。另外，年代剧通常采用家庭群像结构，代际冲突是主要推动力，如果对家庭伦理叙事兴趣有限，可以优先选择集数较短、主线聚焦的作品。</p>
+        <h3>奇幻冒险的世界观铺陈方式</h3>
+        <p>奇幻冒险类剧集的世界观铺陈有两种常见做法：一是通过旁白或字幕在开篇集中交代设定，二是将设定拆散在剧情中逐步释放。前者进入快但容易信息过载，后者需要观众保持注意力。判断一部奇幻剧是否适合自己，可以看前三集是否建立了清晰的规则边界——主角能做什么、不能做什么、代价是什么。规则清晰的剧集在后续冲突中更有说服力。《星河旅人》采用每集解锁一个星球场景的方式逐步展开世界观，适合喜欢探索式叙事的观众。</p>
+      </div>
+    </section>
+
+    <!-- 体验指南 -->
+    <section class="section" id="guide">
+      <div class="section-head">
+        <h2>追剧顺序与选择路径</h2>
+      </div>
+      <div class="guide-steps">
+        <div class="step-item">
+          <span class="step-num">1</span>
+          <div class="step-body">
+            <h4>先确定可投入的时间块</h4>
+            <p>如果每天能连续观看 1 小时以上，优先选择连续叙事型的悬疑剧或年代剧；如果只有碎片时间，单元剧或单集 35 分钟以内的都市轻喜剧更合适。青春校园剧集数通常较短，适合周末集中看完。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">2</span>
+          <div class="step-body">
+            <h4>用前三集判断节奏匹配度</h4>
+            <p>前三集是剧集建立规则和人物关系的阶段。如果三集内没有出现让你想继续追踪的悬念或人物关系，后续大概率也不会突然改变叙事风格。悬疑剧看前三集是否抛出足够具体的案件线索，都市剧看对话是否自然、职业场景是否扎实。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">3</span>
+          <div class="step-body">
+            <h4>比较同类型条目的更新节奏</h4>
+            <p>同样是古装传奇，周更 4 集和首周连更 8 集的追看体验完全不同。周更适合搭配讨论和细节回看，连更则适合一口气推进主线。选择前先确认更新日历，避免追到一半断档太久而丢失剧情记忆。</p>
+          </div>
+        </div>
+        <div class="step-item">
+          <span class="step-num">4</span>
+          <div class="step-body">
+            <h4>参考具体讨论点而非泛化评分</h4>
+            <p>评分只能作为粗筛，真正决定是否合口味的是评论中反复提到的具体元素——某场戏的调度方式、某个角色的行为逻辑、某类案件的呈现手法。如果多个评论都在讨论同一处细节，说明那是该剧的核心特征，可以据此判断是否在个人兴趣范围内。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>热播剧集常见问答</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>悬疑刑侦剧一般多久更新一次？</summary>
+          <div class="faq-answer">多数平台采用每周更新 4—6 集的节奏，部分剧集首周连更 6—8 集后转为周更。以当前在播的《暗夜回声》为例，每周三、周六各更新 2 集，单集时长约 45 分钟。更新日历通常会在剧集条目页标注，追看前可以先确认排播方式再决定是攒集还是跟播。</div>
+        </details>
+        <details class="faq-item">
+          <summary>古装传奇和古装偶像剧有什么区别？</summary>
+          <div class="faq-answer">古装传奇侧重世界观构建、江湖或朝堂的群像叙事，人物动机通常与权力、门派、家国相关；古装偶像剧以男女主情感线为核心，其他元素服务于感情推进。区分时可以看官方简介的落点——如果简介强调“某朝某代的风云变幻”或“多方势力角逐”，更接近传奇类；如果强调“两人相遇后的情感走向”，则偏向偶像剧。</div>
+        </details>
+        <details class="faq-item">
+          <summary>第一次追年代生活剧，从哪部开始比较合适？</summary>
+          <div class="faq-answer">可以先从集数较短、主线聚焦的作品入手，比如 24 集以内的家庭叙事剧，避免一开始就进入多线群像的长篇。观看时留意前两集是否交代清楚主要家庭成员的关系和时代背景，这两点决定后续能否顺利跟进代际冲突。如果对特定年代有偏好，也可以直接按年代筛选。</div>
+        </details>
+        <details class="faq-item">
+          <summary>都市情感剧的“治愈”和“强冲突”怎么区分？</summary>
+          <div class="faq-answer">治愈类通常用生活细节和对话推动情节，单集冲突强度低，结局倾向温和；强冲突类依赖误会、竞争或家庭矛盾制造情绪起伏，单集结尾常设反转。判断方法是看前三集是否出现需要角色做出重大选择的节点——如果选择频繁且后果严重，属于强冲突；如果更多是日常磨合，则偏治愈。</div>
+        </details>
+        <details class="faq-item">
+          <summary>奇幻冒险类剧集的世界观通常怎么判断是否完整？</summary>
+          <div class="faq-answer">看前三集是否建立了清晰的规则边界，包括能力上限、使用代价和空间范围。如果主角的能力可以随意扩展且没有代价，后续冲突容易失去说服力。另外可以观察配角是否拥有独立的目标和行动力，群像构建完整的奇幻剧通常不只围绕主角一人展开。</div>
+        </details>
+        <details class="faq-item">
+          <summary>一部剧更新到一半换编剧或导演，还值得继续追吗？</summary>
+          <div class="faq-answer">更换主创后，可以先看接续的第一集是否保持了原有的人物行为逻辑和叙事节奏。如果核心角色的动机出现明显跳跃，或者单集结构从连续叙事突然变成单元拼盘，风格断裂的可能性较高。如果衔接段落处理自然，则对整体观感影响有限。判断依据是具体情节的连贯性，而不是主创名单本身。</div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-head">
+        <h2>观众评论与讨论</h2>
+        <span class="more">2026-11-08 汇总</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">林</span><span class="nickname">林间小筑</span></div>
+          <p class="comment-text">《暗夜回声》第 8 集把旧案和新案接上了，之前埋的卷宗细节有回响，追到现在觉得这种单元加主线的结构很稳。</p>
+          <span class="comment-tag">暗夜回声</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">陈</span><span class="nickname">陈晚风</span></div>
+          <p class="comment-text">长街灯火的道具和街景很用心，看家庭会议那场戏的时候能感觉到年代氛围，节奏慢但细节撑得住。</p>
+          <span class="comment-tag">长街灯火</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">苏</span><span class="nickname">苏打水没气</span></div>
+          <p class="comment-text">南风知我意台词挺自然的，合租线写得不悬浮，设计师项目部分虽然不算深入但至少不出戏，下饭合适。</p>
+          <span class="comment-tag">南风知我意</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">周</span><span class="nickname">周舟不周</span></div>
+          <p class="comment-text">少年游侠录的武打设计比预想中写实，配角在护送任务里各有各的立场，群像戏没有完全围着主角转，这点不错。</p>
+          <span class="comment-tag">少年游侠录</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">何</span><span class="nickname">何似在人间</span></div>
+          <p class="comment-text">青春不快乐只有 16 集，复读班的场景和对话挺真实的，没有刻意煽情，最后三集志愿填报那段看得有点感触。</p>
+          <span class="comment-tag">青春不快乐</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">顾</span><span class="nickname">顾临川</span></div>
+          <p class="comment-text">星河旅人的星球场景每集一个，视觉上有新鲜感，寻亲主线推进稍慢，但世界观规则交代得还算清楚。</p>
+          <span class="comment-tag">星河旅人</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">沈</span><span class="nickname">沈知倦</span></div>
+          <p class="comment-text">暗夜回声的第七集主线人物登场方式有点刻意，不过第八集收回来了一些，整体还在可接受范围。</p>
+          <span class="comment-tag">暗夜回声</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">陆</span><span class="nickname">陆离光怪</span></div>
+          <p class="comment-text">长街灯火第 15 集的家庭会议戏份很集中，几代人的立场摆得很清楚，拆迁风波的处理没有简单化。</p>
+          <span class="comment-tag">长街灯火</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">叶</span><span class="nickname">叶落无声</span></div>
+          <p class="comment-text">南风知我意第 14 集合租关系转折处理得还行，没有硬拗冲突，设计师项目线也在正常推进。</p>
+          <span class="comment-tag">南风知我意</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">秦</span><span class="nickname">秦时明月光</span></div>
+          <p class="comment-text">少年游侠录第 22 集抵达边城之后节奏加快了，之前几集铺得有点散，希望主线收束能保持这个密度。</p>
+          <span class="comment-tag">少年游侠录</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">许</span><span class="nickname">许愿树下</span></div>
+          <p class="comment-text">青春不快乐的复读班日常很真实，没有把考试压力过度戏剧化，同学之间的互动也自然。</p>
+          <span class="comment-tag">青春不快乐</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">方</span><span class="nickname">方寸之间</span></div>
+          <p class="comment-text">星河旅人第三颗星球的设定挺有意思，但主线线索释放得有点慢，周更追起来容易忘前面细节。</p>
+          <span class="comment-tag">星河旅人</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">唐</span><span class="nickname">唐酒卿</span></div>
+          <p class="comment-text">雾港谜案定档 11 月 12 日，首周连更 6 集，刑侦题材加港口背景，准备开播后先看前三集再决定追不追。</p>
+          <span class="comment-tag">雾港谜案</span>
+        </div>
+        <div class="comment-card">
+          <div class="comment-head"><span class="avatar">韩</span><span class="nickname">韩江雪</span></div>
+          <p class="comment-text">春山如笑预告片的宅院日常氛围不错，古装轻喜题材近期不多，希望正片能保持预告的群像互动节奏。</p>
+          <span class="comment-tag">春山如笑</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-head">
+        <h2>剧集相关资讯</h2>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">2026-11-08</span>
+          <div class="news-body">
+            <h4>暗夜回声 第 8 集上线，旧案卷宗细节引发讨论</h4>
+            <p>第 8 集更新后，观众围绕卷宗中出现的两组日期展开讨论，认为可能指向主线案件的时间线关联。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-11-07</span>
+          <div class="news-body">
+            <h4>长街灯火 今晚 21:00 更新第 15 集，家庭会议戏份集中</h4>
+            <p>本集聚焦老街拆迁的家庭讨论，多代人立场在同一场景中呈现，是近期群像戏份较密集的一集。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-11-06</span>
+          <div class="news-body">
+            <h4>青春不快乐 全 16 集上线，复读班题材短期集中</h4>
+            <p>该剧以复读班为场景，完结后观众反馈集中在台词真实度和志愿填报段落的处理方式上。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-11-04</span>
+          <div class="news-body">
+            <h4>雾港谜案定档 11 月 12 日，首周连更 6 集</h4>
+            <p>刑侦题材新剧公布排播方式，首周连更后转为每周三、周六各更新 2 集，背景设定在港口城市。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-11-03</span>
+          <div class="news-body">
+            <h4>春山如笑发布首支预告，古装轻喜题材 12 月上线</h4>
+            <p>预告片展示宅院日常与群像互动，官方信息显示共 24 集，具体排播日期尚未公布。</p>
+          </div>
+        </div>
+        <div class="news-item">
+          <span class="news-date">2026-10-30</span>
+          <div class="news-body">
+            <h4>星河旅人 第 9 集更新，第三颗星球设定公开</h4>
+            <p>本集解锁新的星球场景，寻亲线索指向另一组坐标，世界观规则在剧情中进一步补充。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 相关推荐 -->
+    <section class="section" id="related">
+      <div class="section-head">
+        <h2>延伸方向与关联条目</h2>
+      </div>
+      <div class="tag-cloud">
+        <a href="/#featured">刑侦单元剧推荐</a>
+        <a href="/#featured">年代家庭群像</a>
+        <a href="/#featured">都市治愈轻喜</a>
+        <a href="/#featured">古装江湖群像</a>
+        <a href="/#featured">复读班成长题材</a>
+        <a href="/#featured">太空歌剧世界观</a>
+        <a href="/#featured">律政职场剧</a>
+        <a href="/#featured">医疗行业剧</a>
+        <a href="/#rank">本周热度榜单</a>
+      </div>
+    </section>
+
+    <!-- 补充板块 - 热门榜单 -->
+    <section class="section" id="rank">
+      <div class="section-head">
+        <h2>本周热播剧集榜单</h2>
+        <span class="more">2026-11-08 更新</span>
+      </div>
+      <div class="rank-list">
+        <div class="rank-item">
+          <span class="rank-num">1</span>
+          <span class="rank-name">暗夜回声</span>
+          <span class="rank-type">悬疑刑侦</span>
+          <span class="rank-score">9.2</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">2</span>
+          <span class="rank-name">少年游侠录</span>
+          <span class="rank-type">古装传奇</span>
+          <span class="rank-score">8.9</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">3</span>
+          <span class="rank-name">长街灯火</span>
+          <span class="rank-type">年代生活</span>
+          <span class="rank-score">8.8</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">4</span>
+          <span class="rank-name">南风知我意</span>
+          <span class="rank-type">都市情感</span>
+          <span class="rank-score">8.5</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">5</span>
+          <span class="rank-name">星河旅人</span>
+          <span class="rank-type">奇幻冒险</span>
+          <span class="rank-score">8.4</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">6</span>
+          <span class="rank-name">青春不快乐</span>
+          <span class="rank-type">青春校园</span>
+          <span class="rank-score">8.1</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">7</span>
+          <span class="rank-name">雾港谜案</span>
+          <span class="rank-type">悬疑刑侦</span>
+          <span class="rank-score">待播</span>
+        </div>
+        <div class="rank-item">
+          <span class="rank-num">8</span>
+          <span class="rank-name">春山如笑</span>
+          <span class="rank-type">古装传奇</span>
+          <span class="rank-score">待播</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 侧栏 -->
+  <aside class="side-col" aria-label="辅助信息">
+    <div class="side-panel">
+      <h3>追剧日历 · 本周</h3>
+      <div class="side-list">
+        <a href="/#updates"><span>周一 · 暗夜回声 第 7 集</span><span>已更新</span></a>
+        <a href="/#updates"><span>周三 · 暗夜回声 第 8 集</span><span>已更新</span></a>
+        <a href="/#updates"><span>周五 · 长街灯火 第 15 集</span><span>今晚 21:00</span></a>
+        <a href="/#updates"><span>周六 · 少年游侠录 第 22 集</span><span>已更新</span></a>
+        <a href="/#updates"><span>周六 · 南风知我意 第 14 集</span><span>已更新</span></a>
+        <a href="/#updates"><span>周日 · 星河旅人 第 10 集</span><span>已更新</span></a>
+      </div>
+      <p class="side-note">排播信息以各剧集页面为准，连更与周更节奏可能调整。</p>
+    </div>
+    <div class="side-panel">
+      <h3>类型快捷入口</h3>
+      <div class="side-list">
+        <a href="/#categories"><span>都市情感 · 42 部</span><span>→</span></a>
+        <a href="/#categories"><span>古装传奇 · 38 部</span><span>→</span></a>
+        <a href="/#categories"><span>悬疑刑侦 · 27 部</span><span>→</span></a>
+        <a href="/#categories"><span>青春校园 · 19 部</span><span>→</span></a>
+        <a href="/#categories"><span>年代生活 · 24 部</span><span>→</span></a>
+        <a href="/#categories"><span>奇幻冒险 · 16 部</span><span>→</span></a>
+      </div>
+    </div>
+    <div class="side-panel">
+      <h3>近期定档</h3>
+      <div class="side-list">
+        <a href="/#news"><span>雾港谜案</span><span>11-12</span></a>
+        <a href="/#news"><span>春山如笑</span><span>12 月</span></a>
+        <a href="/#news"><span>南亭晚照</span><span>11-20</span></a>
+        <a href="/#news"><span>逆光而行</span><span>11-15</span></a>
+      </div>
+      <p class="side-note">定档日期如有调整，以剧集官方信息为准。</p>
+    </div>
+  </aside>
+</div>
+
+<!-- 页尾 -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>555热播电视剧在线观看</h4>
+      <p>聚合热播剧集与追剧指南，按类型、更新节奏和口碑维度整理具体条目，帮助剧迷快速定位下一部要追的剧。</p>
+    </div>
+    <div class="footer-col">
+      <h4>类型导航</h4>
+      <a href="/#categories">都市情感</a>
+      <a href="/#categories">古装传奇</a>
+      <a href="/#categories">悬疑刑侦</a>
+      <a href="/#categories">青春校园</a>
+      <a href="/#categories">年代生活</a>
+    </div>
+    <div class="footer-col">
+      <h4>内容栏目</h4>
+      <a href="/#featured">精选剧集</a>
+      <a href="/#updates">更新动态</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">追剧指南</a>
+      <a href="/#rank">热门榜单</a>
+    </div>
+    <div class="footer-col">
+      <h4>互动与帮助</h4>
+      <a href="/#faq">常见问答</a>
+      <a href="/#comments">用户评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#related">关联条目</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 555热播电视剧在线观看 · 内容聚合示例页</span>
+    <span>部分内容为示例数据，仅用于展示页面结构</span>
+  </div>
+</footer>
+
+</body>
+  </html>
